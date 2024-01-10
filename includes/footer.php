@@ -1,5 +1,4 @@
-   
-        </div>
+</div>
     <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
@@ -15,7 +14,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#!">
+                                <a href="https://www.facebook.com/profile.php?id=100008545994349&locale=fr_FR" target="_blank">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
@@ -23,7 +22,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#!">
+                                <a href="https://github.com/AchrafMajidi" target="_blank">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-github fa-stack-1x fa-inverse"></i>
@@ -39,6 +38,6 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="http://localhost/clean-blog/js/scripts.js"></script>
+        <script src="http://localhost:8080/CLEAN-BLOG/js/script.js"></script>
     </body>
 </html>

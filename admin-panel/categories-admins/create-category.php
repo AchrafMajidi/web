@@ -4,7 +4,7 @@
 
 
     if(!isset($_SESSION['adminname'])) {
-      header("location: http://localhost/clean-blog/admin-panel/admins/login-admins.php");
+      header("location: http://localhost:8080/CLEAN-BLOG/admin-panel/admins/login-admins.php");
     }
 
 
@@ -27,7 +27,7 @@
            
           ]);
 
-          header("location: http://localhost/clean-blog/admin-panel/categories-admins/create-category.php");
+          header("location: http://localhost:8080/CLEAN-BLOG/admin-panel/categories-admins/create-category.php");
 
 
 

@@ -4,7 +4,7 @@
 <?php 
 
     if(isset($_SESSION['adminname'])) {
-       header("location: http://localhost/clean-blog/admin-panel/index.php");
+       header("location: http://localhost:8080/CLEAN-BLOG/admin-panel/index.php");
     }
 
     if(isset($_POST['submit'])) {
@@ -31,7 +31,7 @@
                     $_SESSION['admin_id'] = $row['id'];
                   
 
-                    header('location: http://localhost/clean-blog/admin-panel/index.php');
+                    header('location: http://localhost:8080/CLEAN-BLOG/admin-panel/index.php');
                 } else {
 
                   echo "<div class='alert alert-danger  text-center text-white role='alert'>

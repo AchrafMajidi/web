@@ -1,67 +1,52 @@
-<?php require "../includes/header.php"; ?>
-<?php require "../config/config.php"; ?>
+<?php require "../includes/header.php"?>
+<?php require "../config/config.php"?>
+<?php
+if(isset($_SESSION['username'])){
+  header("location: http://localhost:8080/CLEAN-BLOG/index.php");
+
+}
 
 
-<?php 
 
 
-    //check for the submit
 
-    //take the data
+if(isset($_POST['submit'])){
+    if($_POST['email']=='' OR  $_POST['password']==''){
+      echo "<div class='alert alert-danger  text-center  role='alert'>
+                enter data into the inputs
+            </div>";
 
-    //write our query
+    }else{
+        $email=$_POST['email'];
+        $password=$_POST['password'];
+        $login=$conn->query("SELECT * FROM users WHERE email='$email' ");
+        $login->execute();
+        $row=$login->FETCH(PDO::FETCH_ASSOC);
 
-    //execute and then fetch
 
-    //do our rowCount
+        if($login->rowCount()>0){
+            if(password_verify($password,$row['mypassword'])){
+                $_SESSION['username']=$row['username'];
+                $_SESSION['user_id']=$row['Id'];
 
-    //to do our password_verify + redirect to the index page
+                header("location:http://localhost:8080/CLEAN-BLOG/index.php");
 
-    if(isset($_SESSION['username'])) {
-      header("location: http://localhost/clean-blog/index.php");
-    }
-
-    if(isset($_POST['submit'])) {
-        if($_POST['email'] == '' OR $_POST['password'] == '') {
-            echo "<div class='alert alert-danger  text-center  role='alert'>
-                  enter data into the inputs
-              </div>";
-        } else {
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-
-            $login = $conn->query("SELECT * FROM users WHERE email = '$email'");
-
-            $login->execute();
-
-            $row = $login->FETCH(PDO::FETCH_ASSOC);
-
-             if($login->rowCount() > 0) {
-
-                if(password_verify($password, $row['mypassword'])){
-                    
-
-                    $_SESSION['username'] = $row['username'];
-                    $_SESSION['user_id'] = $row['id'];
-                   
-
-                    header('location: http://localhost/clean-blog/index.php');
-                } else {
-
-                  echo "<div class='alert alert-danger  text-center text-white role='alert'>
+            }else{
+              echo "<div class='alert alert-danger  text-center  role='alert'>
                             the email or password is wrong
                         </div>";
-                 }
 
+            }
+        }else{
+          echo "<div class='alert alert-danger  text-center  role='alert'>
+          the email or password is wrong
+      </div>";
 
-             } else {
-
-              echo "<div class='alert alert-danger  text-center  role='alert'>
-                        the email or password is wrong
-                    </div>";
-             }
         }
     }
+}
+
+
 
 
 
@@ -96,5 +81,5 @@
                   </div>
                 </form>
 
-<?php require "../includes/footer.php"; ?>
-      
+           
+<?php require "../includes/footer.php"?>

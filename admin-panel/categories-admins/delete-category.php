@@ -16,11 +16,11 @@
 
        
 
-       header('location: http://localhost/clean-blog/admin-panel/categories-admins/show-categories.php');
+       header('location: http://localhost:8080/CLEAN-BLOG/admin-panel/categories-admins/show-categories.php');
 
         
     }  else {
-        header("location: http://localhost/clean-blog/404.php");
+        header("location: http://localhost:8080/CLEAN-BLOG/404.php");
        
     }  
 

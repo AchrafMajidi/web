@@ -8,8 +8,7 @@
 
     
     $posts = $conn->query("SELECT posts.id AS id, posts.title AS title, 
-     posts.user_name AS user_name, categories.name AS name, posts.status AS 
-     status FROM categories 
+     posts.user_name AS user_name, categories.name AS name  FROM categories 
     JOIN posts ON categories.id = posts.category_id");
     $posts->execute();
     $rows = $posts->fetchAll(PDO::FETCH_OBJ);
@@ -28,7 +27,7 @@
                     <th scope="col">title</th>
                     <th scope="col">category</th>
                     <th scope="col">user</th>
-                    <th scope="col">status</th>
+                    
                     <th scope="col">delete</th>
                   </tr>
                 </thead>
@@ -39,11 +38,7 @@
                       <td><?php echo $row->title; ?></td>
                       <td><?php echo $row->name; ?></td>
                       <td><?php echo $row->user_name; ?></td>
-                      <?php if($row->status == 0) : ?>
-                        <td><a href="status-posts.php?status=<?php echo $row->status; ?>&id=<?php echo $row->id; ?>" class="btn btn-danger  text-center ">deactivated</a></td>
-                      <?php else : ?>
-                        <td><a href="status-posts.php?status=<?php echo $row->status; ?>&id=<?php echo $row->id; ?>" class="btn btn-primary  text-center ">activated</a></td>
-                      <?php endif; ?>  
+                        
                       <td><a href="delete-posts.php?po_id=<?php echo $row->id; ?>" class="btn btn-danger  text-center ">delete</a></td>
                     </tr>
                  <?php endforeach; ?>

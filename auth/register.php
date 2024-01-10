@@ -1,42 +1,39 @@
-<?php require  "../includes/header.php"; ?>
-<?php require  "../config/config.php"; ?>
-
+<?php require "../includes/header.php"?>
+<?php require "../config/config.php"?>
 <?php
+if(isset($_SESSION['username'])){
+  header("location: http://localhost:8080/CLEAN-BLOG/index.php");
 
-  if(isset($_SESSION['username'])) {
-    header("location: http://localhost/clean-blog/index.php");
-  }
-
-
-  if(isset($_POST['submit'])) {
-
-      if($_POST['email'] == '' OR $_POST['username'] == '' OR $_POST['password'] == '') {
-        echo "<div class='alert alert-danger  text-center  role='alert'>
-                 enter data into the inputs
-              </div>";
-      } else {
-        $email = $_POST['email'];
-        $username = $_POST['username'];
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
-        $insert  = $conn->prepare("INSERT INTO users (email, username, mypassword) VALUES
-        (:email, :username, :mypassword)");
-
-        $insert->execute([
-          ':email' => $email,
-          ':username' => $username,
-          ':mypassword' => $password
-        ]);
-
-        header("location: login.php");
+}
 
 
 
-      }
+
+if(isset($_POST['submit'])){
+    if($_POST['email']=='' OR $_POST['username']=='' OR $_POST['password']==''){
+      echo "<div class='alert alert-danger  text-center  role='alert'>
+      enter data into the inputs
+  </div>";
+    }else{
+        $email=$_POST['email'];
+    $username=$_POST['username'];
+    $password=$_POST['password'];
+    $insert=$conn->prepare("INSERT INTO users (email, username, mypassword) VALUES (:email, :username, :mypassword)");
+    $insert->execute([
+        ':email'=>$email,
+        ':username'=>$username,
+        ':mypassword'=>password_hash($password, PASSWORD_DEFAULT)
+    ]);
+    header("location:login.php");
+
+    }
     
-  }
+}
+
 
 ?>
+
+
 
             <form method="POST" action="register.php">
               <!-- Email input -->
@@ -71,4 +68,5 @@
             </form>
 
 
-<?php require  "../includes/footer.php"; ?>      
+           
+<?php require "../includes/footer.php"?>

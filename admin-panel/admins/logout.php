@@ -3,7 +3,7 @@
     session_start();
     session_unset();
     session_destroy();
-    header("location: http://localhost/clean-blog/admin-panel/admins/login-admins.php");
+    header("location: http://localhost:8080/CLEAN-BLOG/admin-panel/admins/login-admins.php");
 
 
 ?>

@@ -3,7 +3,7 @@
 <?php 
 
     if(!isset($_SESSION['adminname'])) {
-      header("location: http://localhost/clean-blog/admin-panel/admins/login-admins.php");
+      header("location: http://localhost:8080/CLEAN-BLOG/admin-panel/admins/login-admins.php");
     }
 
     
@@ -34,8 +34,8 @@
                   <tr>
                     <th scope="row"><?php echo $row->id; ?></th>
                     <td><?php echo $row->name; ?></td>
-                    <td><a  href="http://localhost/clean-blog/admin-panel/categories-admins/update-category.php?up_id=<?php echo $row->id; ?>" class="btn btn-warning text-white text-center ">Update</a></td>
-                    <td><a  href="http://localhost/clean-blog/admin-panel/categories-admins/delete-category.php?de_id=<?php echo $row->id; ?>" class="btn btn-danger  text-center ">Delete</a></td>
+                    <td><a  href="http://localhost:8080/CLEAN-BLOG/admin-panel/categories-admins/update-category.php?up_id=<?php echo $row->id; ?>" class="btn btn-warning text-white text-center ">Update</a></td>
+                    <td><a  href="http://localhost:8080/CLEAN-BLOG/admin-panel/categories-admins/delete-category.php?de_id=<?php echo $row->id; ?>" class="btn btn-danger  text-center ">Delete</a></td>
                   </tr>
                 <?php endforeach; ?>
                 </tbody>

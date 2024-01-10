@@ -22,7 +22,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title mb-4 d-inline">Admins</h5>
-             <a  href="http://localhost/clean-blog/admin-panel/admins/create-admins.php" class="btn btn-primary mb-4 text-center float-right">Create Admins</a>
+             <a  href="http://localhost:8080/CLEAN-BLOG/admin-panel/admins/create-admins.php" class="btn btn-primary mb-4 text-center float-right">Create Admins</a>
               <table class="table">
                 <thead>
                   <tr>

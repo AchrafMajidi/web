@@ -9,16 +9,16 @@
 
         $posts = $conn->query("SELECT posts.id AS id, posts.title AS title, 
         posts.subtitle AS subtitle, posts.user_name AS user_name, posts.created_at AS 
-        created_at, posts.category_id AS category_id, posts.status AS status
+        created_at, posts.category_id AS category_id
           FROM categories 
         JOIN posts ON categories.id = posts.category_id 
-        WHERE posts.category_id = '$id' AND status = 1");
+        WHERE posts.category_id = '$id'");
         $posts->execute();
         $rows = $posts->fetchAll(PDO::FETCH_OBJ);
 
 
     } else {
-        header("location: http://localhost/clean-blog/404.php");
+        header("location: http://localhost:8080/CLEAN-BLOG/404.php");
        
     }
    
@@ -31,7 +31,7 @@
                <?php foreach($rows as $row) : ?>
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="http://localhost/clean-blog/posts/post.php?post_id=<?php echo $row->id; ?>">
+                        <a href="http://localhost:8080/CLEAN-BLOG/posts/post.php?post_id=<?php echo $row->id; ?>">
                             <h2 class="post-title"><?php echo $row->title; ?></h2>
                             <h3 class="post-subtitle"><?php echo $row->subtitle; ?></h3>
                         </a>

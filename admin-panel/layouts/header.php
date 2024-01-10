@@ -19,7 +19,7 @@
 </head>
 <body>
 <div id="wrapper">
-    <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
+    <nav class="navbar header-top  navbar-expand-lg  navbar-dark bg-dark">
       <div class="container">
       <a class="navbar-brand" href="#">LOGO</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
@@ -30,21 +30,18 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav side-nav" >
           <li class="nav-item">
-            <a class="nav-link text-white" style="margin-left: 20px;" href="http://localhost/clean-blog/admin-panel/index.php">Home
+            <a class="nav-link text-white" style="margin-left: 20px;" href="http://localhost:8080/CLEAN-BLOG/admin-panel/index.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/clean-blog/admin-panel/admins/admins.php" style="margin-left: 20px;">Admins</a>
+            <a class="nav-link" href="http://localhost:8080/CLEAN-BLOG/admin-panel/admins/admins.php" style="margin-left: 20px;">Admins</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/clean-blog/admin-panel/categories-admins/show-categories.php" style="margin-left: 20px;">Categories</a>
+            <a class="nav-link" href="http://localhost:8080/CLEAN-BLOG/admin-panel/categories-admins/show-categories.php" style="margin-left: 20px;">Categories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/clean-blog/admin-panel/posts-admins/show-posts.php" style="margin-left: 20px;">Posts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://localhost/clean-blog/admin-panel/comments-admins/show-comments.php" style="margin-left: 20px;">Comments</a>
+            <a class="nav-link" href="http://localhost:8080/CLEAN-BLOG/admin-panel/posts-admins/show-posts.php" style="margin-left: 20px;">Posts</a>
           </li>
           <?php endif; ?>
          
@@ -52,7 +49,7 @@
         <ul class="navbar-nav ml-md-auto d-md-flex">
         <?php if(isset($_SESSION['adminname'])) : ?>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/clean-blog/admin-panel/index.php">Home
+            <a class="nav-link" href="http://localhost:8080/CLEAN-BLOG/admin-panel/index.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -62,12 +59,12 @@
              <?php echo $_SESSION['adminname']; ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="http://localhost/clean-blog/admin-panel/admins/logout.php">Logout</a>
+              <a class="dropdown-item" href="http://localhost:8080/CLEAN-BLOG/admin-panel/admins/logout.php">Logout</a>
             </div>
           </li>
            <?php else : ?> 
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/clean-blog/admin-panel/admins/login-admins.php">login
+            <a class="nav-link" href="http://localhost:8080/CLEAN-BLOG/admin-panel/admins/login-admins.php">login
               <span class="sr-only">(current)</span>
             </a>
           </li>

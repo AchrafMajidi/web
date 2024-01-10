@@ -4,7 +4,7 @@
 <?php  
 
     if(!isset($_SESSION['adminname'])) {
-      header("location: http://localhost/clean-blog/admin-panel/admins/login-admins.php");
+      header("location: http://localhost:8080/CLEAN-BLOG/admin-panel/admins/login-admins.php");
     }
 
 
@@ -29,7 +29,7 @@
             ':mypassword' => $password
           ]);
 
-          header("location: http://localhost/clean-blog/admin-panel/index.php");
+          header("location: http://localhost:8080/CLEAN-BLOG/admin-panel/index.php");
 
 
 
